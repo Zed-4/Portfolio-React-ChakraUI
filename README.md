@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Main Page
+![image](https://github.com/Zed-4/Portfolio/assets/8176316/33d4d866-038c-44a0-b22f-0f771c154b85)
 
 ## Initializations
 
