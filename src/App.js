@@ -80,36 +80,11 @@ const emailLink = 'mailto: abtin.ortgoli@yahoo.com'
 const githubLink = 'https://github.com/Zed-4'
 const gitlabLink = 'https://gitlab.com/antin.ortholi'
 
-// const links = [
-//   { name: 'About', href: '/about', onclick: { scrollToAbout } },
-//   { name: 'Projects', href: '/projects', onclick: { scrollToProjects } },
-//   { name: 'Contact', href: '/contact', onclick: { scrollToContact } }
-// ]
-
-// const NavLink = ({ children, href }) => (
-//   <Link
-//     px={2}
-//     py={1}
-//     rounded={'sm'}
-//     _hover={{
-//       textDecoration: 'none',
-//       bg: useColorModeValue('gray.500', 'gray.700')
-//     }}
-//     href={href}
-//     onClick={onclick}>
-//     {children}
-//   </Link>
-// )
-
 function App() {
-  // blue, cyan, gray, green, orange, pink, purple, red, teal, yellow
 
   const { colorMode, toggleColorMode } = useColorMode();
 
   const [isMoreOpen, setMoreOpen] = useControllableState({ defaultValue: false });
-
-  // const navShrunkColor = useColorModeValue(colors['bgWhite'], colors['bgBlack']);
-
   const grayOrBlack = useColorModeValue(colors['bgGrayLight'], colors['bgBlack']);
   const greenOrDarkGreen = useColorModeValue(colors['greenDark'], colors['green']);
 
@@ -118,17 +93,6 @@ function App() {
       {/* ----------------------------HamburgerIcon setup---------------------------- */}
       <Box bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])} color={useColorModeValue(colors['red'], colors['orange'])} fontWeight='bold' boxShadow='dark-lg'>
         <Flex h={24} alignItems={'center'} justifyContent={'flex-start'}>
-          {/* <IconButton
-            ml='1'
-            size={'md'}
-            bg={useColorModeValue(colors['bgWhite'], colors['bgBlack'])}
-            icon={isOpen ?
-              <CloseIcon color={colors['red']} /> :
-              <HamburgerIcon color={colors['bgGrayLight']} />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          /> */}
           <HStack spacing={1} alignItems={'center'}>
             {/* ----------------------------Dark/Light Mode---------------------------- */}
             <Button
@@ -151,21 +115,6 @@ function App() {
                 height="50%"
                 orientation='vertical'
               />
-              {/* </Center>
-            <HStack
-              id='about'
-              fontSize='xl'
-              as={'nav'}
-              spacing={1}
-              display={{ base: 'none', md: 'flex' }}
-            >
-              {_.map(links, ({ name, href, onclick }) => (
-                <NavLink key={name} href={href} onClick={onclick}>
-                  {name}
-                </NavLink>
-              ))}
-            </HStack>
-            <Center px="1" height='50px'> */}
               <Divider
                 borderColor={useColorModeValue('gray.500', 'gray.500')}
                 display={{ base: 'none', md: 'flex' }}
@@ -182,7 +131,6 @@ function App() {
             px='2'
             fontSize={{ base: "sm", md: "lg", lg: '2xl' }}
             fontWeight='bold'
-            // bg={useColorModeValue('gray.200', 'gray.900')}
             color={useColorModeValue(colors['red'], colors['orange'])}
             _hover={{
               cursor: 'context-menu',
