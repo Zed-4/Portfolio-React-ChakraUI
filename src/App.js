@@ -7,7 +7,7 @@ import avatarUrl from './assets/me.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faSquareGitlab } from '@fortawesome/free-brands-svg-icons'
 
 import {
   Box,
@@ -16,9 +16,7 @@ import {
   Flex,
   Avatar,
   Link,
-  IconButton,
   Button,
-  useDisclosure,
   useColorMode,
   useColorModeValue,
   useControllableState,
@@ -38,7 +36,7 @@ import {
   Highlight,
 } from '@chakra-ui/react'
 
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon, MinusIcon, ArrowRightIcon } from '@chakra-ui/icons'
+import { MoonIcon, SunIcon, MinusIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
 const colors = {
   darkBlue: '#000077',
@@ -49,7 +47,7 @@ const colors = {
   darkCyan: '#003f3f',
   gray: '#718096',
   green: '#00cd00',
-  greenDark: '#004e2a',
+  greenDark: '#026440',
   orange: '#DD6B20',
   orangeDark: '#4e2a00',
   darkOrange: '#ff8c00',
@@ -68,62 +66,59 @@ const colors = {
   white: '#f5f5f5'
 }
 
+const skills = [
+  { name: "C/C++", years: 7 },
+  { name: 'Arduino', years: 3 },
+  { name: 'Embedded Systems', years: 2 },
+  { name: 'Python', years: 5 },
+  { name: 'MATLAB' },
+  { name: 'JavaScript' },
+]
+const mainPage = '/'
 const linkedinLink = 'https://www.linkedin.com/in/abtin-ortgoli/'
 const emailLink = 'mailto: abtin.ortgoli@yahoo.com'
 const githubLink = 'https://github.com/Zed-4'
+const gitlabLink = 'https://gitlab.com/antin.ortholi'
 
-const scrollToAbout = () => {
-  const aboutSection = document.getElementById("about");
-  aboutSection.scrollIntoView({ behavior: "smooth" });
-}
+// const links = [
+//   { name: 'About', href: '/about', onclick: { scrollToAbout } },
+//   { name: 'Projects', href: '/projects', onclick: { scrollToProjects } },
+//   { name: 'Contact', href: '/contact', onclick: { scrollToContact } }
+// ]
 
-const scrollToProjects = () => {
-  const aboutSection = document.getElementsByClassName("projects");
-  aboutSection.scrollIntoView({ behavior: "smooth" });
-}
-
-const scrollToContact = () => {
-  const aboutSection = document.getElementsByClassName("contact");
-  aboutSection.scrollIntoView({ behavior: "smooth" });
-}
-
-const links = [
-  { name: 'About', href: '/about', onclick: { scrollToAbout } },
-  { name: 'Projects', href: '/projects', onclick: { scrollToProjects } },
-  { name: 'Contact', href: '/contact', onclick: { scrollToContact } }
-]
-
-const NavLink = ({ children, href }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'sm'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.500', 'gray.700')
-    }}
-    href={href}
-    onClick={onclick}>
-    {children}
-  </Link>
-)
+// const NavLink = ({ children, href }) => (
+//   <Link
+//     px={2}
+//     py={1}
+//     rounded={'sm'}
+//     _hover={{
+//       textDecoration: 'none',
+//       bg: useColorModeValue('gray.500', 'gray.700')
+//     }}
+//     href={href}
+//     onClick={onclick}>
+//     {children}
+//   </Link>
+// )
 
 function App() {
   // blue, cyan, gray, green, orange, pink, purple, red, teal, yellow
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   const [isMoreOpen, setMoreOpen] = useControllableState({ defaultValue: false });
 
-  const navShrunkColor = useColorModeValue(colors['bgWhite'], colors['bgBlack']);
+  // const navShrunkColor = useColorModeValue(colors['bgWhite'], colors['bgBlack']);
+
+  const grayOrBlack = useColorModeValue(colors['bgGrayLight'], colors['bgBlack']);
+  const greenOrDarkGreen = useColorModeValue(colors['greenDark'], colors['green']);
 
   return (
     <Box bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}>
       {/* ----------------------------HamburgerIcon setup---------------------------- */}
       <Box bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])} color={useColorModeValue(colors['red'], colors['orange'])} fontWeight='bold' boxShadow='dark-lg'>
         <Flex h={24} alignItems={'center'} justifyContent={'flex-start'}>
-          <IconButton
+          {/* <IconButton
             ml='1'
             size={'md'}
             bg={useColorModeValue(colors['bgWhite'], colors['bgBlack'])}
@@ -133,7 +128,7 @@ function App() {
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
-          />
+          /> */}
           <HStack spacing={1} alignItems={'center'}>
             {/* ----------------------------Dark/Light Mode---------------------------- */}
             <Button
@@ -198,8 +193,7 @@ function App() {
           <Flex p='1' right='0' top='0' position='absolute' align='center'>
             {/* ----------------------------Avatar---------------------------- */}
             <Link
-              href={linkedinLink}
-              target='_blank'>
+              href={mainPage}>
               <Button
                 bg={useColorModeValue(colors['bgWhite'], colors['bgBlack'])}
                 as={Button}
@@ -213,31 +207,30 @@ function App() {
                 minW={0}
               >
                 {/* <Avatar name='Abtin Ortgoli' m='2' size='2xl' src={avatarUrl} /> */}
-                <Avatar name='Abtin Ortgoli' m='2' size={{ base: 'xl', md: 'xl', lg: '2xl' }} src={avatarUrl} />
+                <Avatar
+                  bg={useColorModeValue(colors['bgWhite'], colors['bgBlack'])}
+                  color={colors['orange']}
+                  name='Abtin Ortgoli'
+                  m='2'
+                  size={{ base: 'xl', md: 'xl', lg: '2xl' }}
+                  src={avatarUrl} />
               </Button>
             </Link>
           </Flex>
         </Flex>
         {/* ----------------------------Nav Shrunk---------------------------- */}
-        {isOpen ? (
+        {/* {isOpen ? (
           <Box pb={2} display={{ md: 'none' }}>
             <Box
               border='1px'
               // color='blackAlpha.200'
               color={navShrunkColor}
             />
-            {/* <Stack as={'nav'} spacing={1}>
-              {_.map(links, ({ name, href }) => (
-                <NavLink key={name} href={href}>
-                  {name}
-                </NavLink>
-              ))}
-            </Stack> */}
           </Box>
-        ) : null}
+        ) : null} */}
       </Box >
       {/* ----------------------------Main page---------------------------- */}
-      <Box minH='100vh'>
+      <Box minH='100vh' pb='20'>
         <Box position='relative' pt='20' >
           <Divider borderColor={useColorModeValue('gray.500', 'gray.500')} />
           <AbsoluteCenter px='0' mt='10'>
@@ -613,132 +606,50 @@ function App() {
                 </CardHeader>
                 <CardBody>
                   <Stack divider={<StackDivider />} spacing='4'>
-                    <Stack direction={['column', 'row']}
-                      p='1'
-                      py='3'
+                    <Stack
+                      direction={{
+                        base: 'column',
+                        sm: 'row',
+                        md: 'row'
+                      }}
+                      wrap='wrap'
+                      rowGap='2'
+                      spacing='2'
                     >
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['C++/C', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
+                      {_.map(skills, (skill, index) => (
+                        <Box
+                          opacity='50%'
+                          display='flex'
+                          _hover={{
+                            boxShadow: 'inner',
+                            rounded: 'md',
+                            textDecoration: 'none',
+                            opacity: '100%'
+                          }}
                         >
-                          C++/C
-                        </Highlight>
-                        <Highlight
-                          query={['+7', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'full', bg: colors['green'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          +7
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['Arduino', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          Arduino
-                        </Highlight>
-                        <Highlight
-                          query={['+3', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'full', bg: colors['green'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          +3
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['Embedded Systems', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          Embedded Systems
-                        </Highlight>
-                        <Highlight
-                          query={['+2', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'full', bg: colors['green'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          +2
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['Python', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          Python
-                        </Highlight>
-                        <Highlight
-                          query={['+5', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'full', bg: colors['green'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          +5
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['MATLAB', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          MATLAB
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['JavaScript', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          JavaScript
-                        </Highlight>
-                      </Box>
-                      <Box opacity='50%'
-                        _hover={{
-                          boxShadow: 'inner',
-                          rounded: 'md',
-                          textDecoration: 'none',
-                          opacity: '100%'
-                        }}>
-                        <Highlight
-                          query={['React', 'emphasize', 'Accentuate']}
-                          styles={{ mr: '2', px: '2', py: '2', rounded: 'base', bg: colors['orange'], color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack']) }}
-                        >
-                          React
-                        </Highlight>
-                      </Box>
+                          <Box
+                            backgroundColor={colors['orange']}
+                            color={grayOrBlack}
+                            rounded='md'
+                            p='1'
+                          >
+                            {skill['name']}
+                          </Box>
+                          {skill['years'] && (
+                            <Box
+                              backgroundColor={greenOrDarkGreen}
+                              color={grayOrBlack}
+                              rounded='full'
+                              px='2'
+                              py='1'
+                              ml='1'
+                            >
+                              +{skill['years']}
+                            </Box>
+                          )}
+                        </Box>
+                      ))}
+                      {/* map goes here */}
                     </Stack>
                   </Stack>
                 </CardBody>
@@ -751,11 +662,11 @@ function App() {
       < Flex
         bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])}
         boxShadow='dark-lg' borderColor={useColorModeValue('gray.500', 'gray.500')}
-        // width={{ lg: '100vw' }}
+        width={{ lg: '100vw' }}
         p='2'
         justify={{ base: "center", md: "flex-end", lg: "flex-end" }
         }
-        // position={{ lg: "fixed" }}
+        position={{ lg: "fixed" }}
         right={0}
         bottom={0} >
         <Stack direction='row' spacing={2}>
@@ -806,6 +717,22 @@ function App() {
                 }}
               >
                 Github
+              </Button>
+            </Link>
+            <Link href={gitlabLink} target='_blank'>
+              <Button
+                color={useColorModeValue(colors['orange'], colors['orange'])}
+                fontSize={{ base: '15px', md: '20px', lg: '30px' }}
+                height='48px'
+                width={{ base: '80px', md: '100px', lg: '140px' }}
+                leftIcon={< FontAwesomeIcon icon={faSquareGitlab} />}
+                _hover={{
+                  rounded: 'sm',
+                  textDecoration: 'none',
+                  bg: useColorModeValue('gray.400', 'gray.700'),
+                }}
+              >
+                Gitlab
               </Button>
             </Link>
           </ButtonGroup>
