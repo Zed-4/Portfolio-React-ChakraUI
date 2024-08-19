@@ -261,7 +261,6 @@ function App() {
           <Box>
             {/* ----------------------------Education CARD---------------------------- */}
             <Card
-              minW='397px'
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
