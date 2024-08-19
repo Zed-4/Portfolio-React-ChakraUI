@@ -314,7 +314,7 @@ function App() {
                     </Text>
                     <Text pt='2' fontSize='sm'>
                       <Highlight
-                        query={['Graduated: Spring 2023', 'emphasize', 'Accentuate']}
+                        query={['Graduated: May 2023', 'emphasize', 'Accentuate']}
                         styles={{
                           px: '2',
                           py: '1',
@@ -323,7 +323,7 @@ function App() {
                           color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
                         }}
                       >
-                        Graduated: Spring 2023
+                        Graduated: May 2023
                       </Highlight>
                     </Text>
                     <Text pt='2' fontSize='sm'>
@@ -415,7 +415,7 @@ function App() {
             {/* ----------------------------Experiance CARD---------------------------- */}
           </Box>
           <Box>
-            <Card
+		              <Card
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
@@ -433,6 +433,106 @@ function App() {
                   Experiance
                 </Heading>
               </CardHeader>
+              <CardBody>
+                <Stack divider={<StackDivider />} spacing='4'>
+                  <Box
+                    p='1'
+                    opacity='50%'
+                    _hover={{
+                      boxShadow: 'inner',
+                      rounded: 'md',
+                      // bg: useColorModeValue(colors['bgWhite'], colors['orangeDark']),
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
+                    <Heading size='sm' textTransform='uppercase'>
+                      University of Texas at Arlington
+                    </Heading>
+                    <Text pt='2' fontSize='xs'>
+                      Arlintgon, TX
+                    </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    opacity='50%'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
+                    <Heading size='sm' textTransform='uppercase'>
+                      Title
+                    </Heading>
+                    <Text pt='2' fontSize='md'>
+                      Software Systems Spacialist I
+                    </Text>
+                    <Text pt='2' fontSize='sm'>
+                      <Highlight
+                        query={['PRESENT', 'emphasize', 'Accentuate']}
+                        styles={{
+                          px: '2',
+                          py: '1',
+                          rounded: 'full',
+                          bg: colors['orange'],
+                          color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
+                        }}
+                      >
+                        08-2024 TO PRESENT
+                      </Highlight>
+                    </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    opacity='50%'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
+                    <Heading pb='2' size='sm' textTransform='uppercase'>
+                      Tasks
+                    </Heading>
+                    <List spacing={3}>
+					<ListItem>
+                        <ListIcon as={MinusIcon} color={colors['orange']} />
+                        <Highlight
+                          query={['Fall 2022', 'emphasize', 'Accentuate']}
+                          styles={{ px: '2', py: '1', rounded: 'full', bg: colors['orange'] }}
+                        >
+                          Managed and configured software systems to minimize downtime.
+                        </Highlight>
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={MinusIcon} color={colors['orange']} />
+                        <Highlight
+                          query={['Fall 2023', 'emphasize', 'Accentuate']}
+                          styles={{ px: '2', py: '1', rounded: 'full', bg: colors['orange'] }}
+                        >
+                          Provided technical support and troubleshooting to end-users (faculty, staff, and students) of Windows and Linux.
+                        </Highlight>
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={MinusIcon} color={colors['orange']} />
+                        Supported and maintained classroom/lab technologies and computers.
+                      </ListItem>
+                    </List>
+                  </Box>
+                </Stack>
+              </CardBody>
+            </Card>
+			<Box py='5'>
+				<Divider borderColor={colors['orange']} />
+			< /Box>
+            <Card
+              pt='5'
+              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+              variant='unstyled'
+              _hover={{
+                boxShadow: 'dark-lg',
+                textDecoration: 'none',
+                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                opacity: '100%'
+              }}>
               <CardBody>
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
@@ -477,7 +577,7 @@ function App() {
                           color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
                         }}
                       >
-                        10-2021 TO PRESENT
+                        10-2021 TO 12-2023
                       </Highlight>
                     </Text>
                   </Box>
@@ -532,8 +632,9 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
+			<Divider py='3' borderColor={colors['orange']} />
             {/* ----------------------------Skill CARD---------------------------- */}
-            <Box pt='2'>
+            <Box pt='4'>
               <Card
                 p='2'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
