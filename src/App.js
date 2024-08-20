@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import _ from 'lodash'
+import _, { } from 'lodash'
 
 import avatarUrl from './assets/me.jpg'
+import resume from './assets/resume/Abtin_Ortgoli.pdf'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faSquareGitlab } from '@fortawesome/free-brands-svg-icons'
 
 import {
@@ -14,6 +15,7 @@ import {
   Stack,
   HStack,
   Flex,
+  Spacer,
   Avatar,
   Link,
   Button,
@@ -75,6 +77,7 @@ const skills = [
   { name: 'JavaScript' },
 ]
 const mainPage = '/'
+//const resume= "./assets/resume/Abtin_Ortgoli.pdf"
 const linkedinLink = 'https://www.linkedin.com/in/abtin-ortgoli/'
 const emailLink = 'mailto: abtin.ortgoli@yahoo.com'
 const githubLink = 'https://github.com/Zed-4'
@@ -259,8 +262,8 @@ function App() {
           pb='5'
           justify='space-evenly'
           direction={{ base: 'column', md: 'column', lg: 'row' }}>
+          {/* ----------------------------Education CARD---------------------------- */}
           <Box>
-            {/* ----------------------------Education CARD---------------------------- */}
             <Card
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -412,8 +415,9 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-            {/* ----------------------------Experience CARD---------------------------- */}
+            <Divider borderColor={colors['orange']} my='4' />
           </Box>
+          {/* ----------------------------Experience CARD---------------------------- */}
           <Box>
             <Card
               p='2'
@@ -520,11 +524,9 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-            <Box py='5'>
-              <Divider borderColor={colors['orange']} />
-            </Box>
+            <Divider borderColor={colors['orange']} my='4' />
             <Card
-              pt='5'
+              p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
               _hover={{
@@ -632,9 +634,9 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-            <Divider py='3' borderColor={colors['orange']} />
+            <Divider py='4' borderColor={colors['orange']} />
             {/* ----------------------------Skill CARD---------------------------- */}
-            <Box pt='4'>
+            <Box mt='4'>
               <Card
                 p='2'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -657,7 +659,7 @@ function App() {
                   <Stack divider={<StackDivider />} spacing='4'>
                     <Stack
                       direction={{
-                        base: 'column',
+                        base: 'row',
                         sm: 'row',
                         md: 'row'
                       }}
@@ -708,7 +710,7 @@ function App() {
         </Flex>
       </Box >
       {/* ----------------------------Footer---------------------------- */}
-      < Flex
+      <Flex overflow='auto'
         bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])}
         boxShadow='dark-lg' borderColor={useColorModeValue('gray.500', 'gray.500')}
         width={{ lg: '100vw' }}
@@ -718,8 +720,26 @@ function App() {
         position={{ lg: "fixed" }}
         right={0}
         bottom={0} >
+        <Link href={resume} target='_blank'>
+          <Button
+            ml='4'
+            color={useColorModeValue(colors['blackGH'], colors['white'])}
+            fontSize={{ base: '15px', md: '20px', lg: '30px' }}
+            height='48px'
+            width={{ base: '90px', md: '120px', lg: '180px' }}
+            leftIcon={<FontAwesomeIcon icon={faAddressCard} />}
+            _hover={{
+              rounded: 'sm',
+              textDecoration: 'none',
+              bg: useColorModeValue('gray.400', 'gray.700'),
+            }}
+          >
+            RESUME
+          </Button>
+        </Link>
+        <Spacer />
         <Stack direction='row' spacing={2}>
-          <ButtonGroup rounded='sm' boxShadow='dark-lg' colorScheme='gray' variant='ghost' >
+          <ButtonGroup rounded='sm' boxShadow='dark-lg' colorScheme='gray' variant='ghost'>
             <Link href={emailLink}>
               <Button
                 color={useColorModeValue(colors['purple'], colors['purple'])}
