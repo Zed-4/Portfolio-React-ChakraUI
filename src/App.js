@@ -89,6 +89,7 @@ function App() {
   const greenOrDarkGreen = useColorModeValue(colors['greenDark'], colors['green']);
 
   return (
+
     <Box bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}>
       {/* ----------------------------HamburgerIcon setup---------------------------- */}
       <Box bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])} color={useColorModeValue(colors['red'], colors['orange'])} fontWeight='bold' boxShadow='dark-lg'>
@@ -309,7 +310,7 @@ function App() {
                       Degree
                     </Heading>
                     <Text pt='2' fontSize='md'>
-                      Bachelor of Science in Computer Engineering
+                      Bachelor of Engineering in Computer Engineering
                     </Text>
                     <Text pt='2' fontSize='sm'>
                       <Highlight
@@ -411,10 +412,10 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-            {/* ----------------------------Experiance CARD---------------------------- */}
+            {/* ----------------------------Experience CARD---------------------------- */}
           </Box>
           <Box>
-		              <Card
+            <Card
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
@@ -429,7 +430,7 @@ function App() {
                   pb='5'
                   size='lg'
                   color={useColorModeValue(colors['red'], colors['orange'])}>
-                  Experiance
+                  Experience
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -448,7 +449,7 @@ function App() {
                       University of Texas at Arlington
                     </Heading>
                     <Text pt='2' fontSize='xs'>
-                      Arlintgon, TX
+                      Arlington, TX
                     </Text>
                   </Box>
                   <Box
@@ -463,7 +464,7 @@ function App() {
                       Title
                     </Heading>
                     <Text pt='2' fontSize='md'>
-                      Software Systems Spacialist I
+                      Software Systems Specialist I
                     </Text>
                     <Text pt='2' fontSize='sm'>
                       <Highlight
@@ -492,13 +493,13 @@ function App() {
                       Tasks
                     </Heading>
                     <List spacing={3}>
-					<ListItem>
+                      <ListItem>
                         <ListIcon as={MinusIcon} color={colors['orange']} />
                         <Highlight
                           query={['Fall 2022', 'emphasize', 'Accentuate']}
                           styles={{ px: '2', py: '1', rounded: 'full', bg: colors['orange'] }}
                         >
-                          Managed and configured software systems to minimize downtime.
+                          Manage and configuring software systems to minimize downtime.
                         </Highlight>
                       </ListItem>
                       <ListItem>
@@ -507,21 +508,21 @@ function App() {
                           query={['Fall 2023', 'emphasize', 'Accentuate']}
                           styles={{ px: '2', py: '1', rounded: 'full', bg: colors['orange'] }}
                         >
-                          Provided technical support and troubleshooting to end-users (faculty, staff, and students) of Windows and Linux.
+                          Provide technical support and troubleshooting to end-users (faculty, staff, and students) of Windows and Linux.
                         </Highlight>
                       </ListItem>
                       <ListItem>
                         <ListIcon as={MinusIcon} color={colors['orange']} />
-                        Supported and maintained classroom/lab technologies and computers.
+                        Support and maintaining classroom/lab technologies and computers.
                       </ListItem>
                     </List>
                   </Box>
                 </Stack>
               </CardBody>
             </Card>
-			<Box py='5'>
-				<Divider borderColor={colors['orange']} />
-			< /Box>
+            <Box py='5'>
+              <Divider borderColor={colors['orange']} />
+            </Box>
             <Card
               pt='5'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -631,7 +632,7 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-			<Divider py='3' borderColor={colors['orange']} />
+            <Divider py='3' borderColor={colors['orange']} />
             {/* ----------------------------Skill CARD---------------------------- */}
             <Box pt='4'>
               <Card
@@ -718,7 +719,7 @@ function App() {
         right={0}
         bottom={0} >
         <Stack direction='row' spacing={2}>
-          <ButtonGroup rounded='sm' boxShadow='dark-lg' colorScheme='gray' variant='ghost'>
+          <ButtonGroup rounded='sm' boxShadow='dark-lg' colorScheme='gray' variant='ghost' >
             <Link href={emailLink}>
               <Button
                 color={useColorModeValue(colors['purple'], colors['purple'])}
@@ -748,7 +749,7 @@ function App() {
                   bg: useColorModeValue('gray.400', 'gray.700'),
                 }}
               >
-                Linkedin
+                LinkedIn
               </Button>
             </Link>
             <Link href={githubLink} target='_blank'>
@@ -764,7 +765,7 @@ function App() {
                   bg: useColorModeValue('gray.400', 'gray.700'),
                 }}
               >
-                Github
+                GitHub
               </Button>
             </Link>
             <Link href={gitlabLink} target='_blank'>
@@ -780,7 +781,7 @@ function App() {
                   bg: useColorModeValue('gray.400', 'gray.700'),
                 }}
               >
-                Gitlab
+                GitLab
               </Button>
             </Link>
           </ButtonGroup>
