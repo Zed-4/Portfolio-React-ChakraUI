@@ -103,7 +103,7 @@ const projectFourSkills = [
 ]
 
 const mainPage = '/'
-//const resume= "./assets/resume/Abtin_Ortgoli.pdf"
+
 const linkedinLink = 'https://www.linkedin.com/in/abtin-ortgoli/'
 const emailLink = 'mailto: abtin.ortgoli@yahoo.com'
 const githubLink = 'https://github.com/Zed-4'
@@ -124,7 +124,7 @@ function App() {
 
   return (
 
-    <Box bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}>
+    <Box bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])} cursor='context-menu'>
       {/* ----------------------------HamburgerIcon setup---------------------------- */}
       <Box bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])} color={useColorModeValue(colors['red'], colors['orange'])} fontWeight='bold' boxShadow='dark-lg'>
         <Flex h={24} alignItems={'center'} justifyContent={'flex-start'}>
@@ -237,10 +237,11 @@ function App() {
             noOfLines={isMoreOpen ? undefined : '1'}
             textShadow='none'
             align="center"
+            textAlign='justify'
             m='1'
             mb='0'
             py='3'
-            w='50%'
+            w={{ base: '95%', md: '90%', lg: '60%' }}
             // px='25%'
             color={useColorModeValue('gray.700', 'gray.300')}
           >
@@ -399,7 +400,7 @@ function App() {
                             color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
                           }}
                         >
-                          NASA TSGC Design Challenge of Fall 2022
+                          NASA TSGC Design Challenge Fall 2022
                         </Highlight>
                       </ListItem>
                       <ListItem>
@@ -414,7 +415,7 @@ function App() {
                             color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
                           }}
                         >
-                          NASA TSGC Design Challenge of Spring 2023
+                          NASA TSGC Design Challenge Spring 2023
                         </Highlight>
                       </ListItem>
                       <ListItem>
@@ -481,7 +482,7 @@ function App() {
                       opacity: '100%'
                     }}>
                     <Heading size='sm' textTransform='uppercase'>
-                      University of Texas at Arlington
+                      I: University of Texas at Arlington
                     </Heading>
                     <Text pt='2' fontSize='xs'>
                       Arlington, TX
@@ -737,376 +738,431 @@ function App() {
                 </CardBody>
               </Card>
             </Box>
+            <Divider py='4' borderColor={colors['orange']} />
           </Box>
         </Flex>
         {/* ----------------------------PROJECTS---------------------------- */}
         <Flex justify='flex-end'>
-          <HStack justifyContent='center' flexFlow='wrap' overflow='auto' spacing='24px'>
-            {/* ----------------------------PROJECT I---------------------------- */}
-            <Card w={{ base: "sm", md: "sm", lg: 'sm' }}
-              p='1'
-              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
-              variant='unstyled'
-              _hover={{
-                border: '1px',
-                borderColor: useColorModeValue('gray.500', 'gray.500'),
-                boxShadow: 'dark-lg',
-                rounded: '0',
-                textDecoration: 'none',
-                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
-                opacity: '100%'
-              }}>
-              <CardHeader>
-                <Heading size='md'>Project I</Heading>
-              </CardHeader>
-              <CardBody>
-                <Stack divider={<StackDivider />} spacing='2'>
-                  <Box boxSize='fit-content' m='auto' my='1'>
-                    <Link href={projectOne} target='_blank'>
-                      <Box
-                        _hover={{
-                          color: useColorModeValue(colors['red'], colors['orange']),
-                          textDecoration: 'none',
-                          fontWeight: 'bold'
-                        }}>
-                        {< FontAwesomeIcon icon={faClock} size='10x' />}
-                      </Box>
-                    </Link>
-                  </Box>
-                  <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                      Summary
-                    </Heading>
-                    <Text pt='2' fontSize='sm'>
-                      Using both Millis and interrupts to make a working digital clock using no delays.
-                    </Text>
-                  </Box>
+          <Card
+            m='2'
+            p='1'
+            color={useColorModeValue(colors['red'], colors['orange'])}
+            bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+            _hover={{
+              boxShadow: 'dark-lg',
+              textDecoration: 'none',
+              bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+              opacity: '100%'
+            }}>
+            <CardHeader>
+              <Heading size='lg'>Projects</Heading>
+            </CardHeader>
+            <HStack flexFlow='wrap' maxH={{ base: "500", md: "300", lg: 'fit-content' }} justifyContent='center' overflowY='auto' spacing='5px' m='1'>
+              {/* ----------------------------PROJECT I---------------------------- */}
+              <Card
+                minH={{ base: "sm", md: "sm", lg: '29rem' }}
+                w={{ base: "sm", md: "sm", lg: 'sm' }}
+                m='2'
+                p='1'
+                bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+                variant='outline'
+                rounded='0'
+                _hover={{
+                  border: '1px',
+                  borderColor: useColorModeValue('gray.500', 'gray.500'),
+                  boxShadow: 'dark-lg',
+                  rounded: '0',
+                  textDecoration: 'none',
+                  bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                  opacity: '100%'
+                }}>
+                <Link href={projectOne} target='_blank'
+                  _hover={{
+                    color: useColorModeValue(colors['red'], colors['orange']),
+                    textDecoration: 'none',
+
+                  }} >
+                  <CardHeader color={useColorModeValue('gray.700', 'gray.300')}>
+                    <Heading size='md'>Project I</Heading>
+                  </CardHeader>
                   <CardBody>
-                    <Stack divider={<StackDivider />} spacing='4'>
-                      <Stack
-                        direction={{
-                          base: 'row',
-                          sm: 'row',
-                          md: 'row'
-                        }}
-                        wrap='wrap'
-                        rowGap='2'
-                        spacing='2'
-                      >
-                        {_.map(projectOneSkills, (skill, index) => (
-                          <Box
-                            opacity='50%'
-                            display='flex'
-                            _hover={{
-                              boxShadow: 'inner',
-                              rounded: 'md',
-                              textDecoration: 'none',
-                              opacity: '100%'
+                    <Stack divider={<StackDivider />} spacing='2'>
+                      <Box boxSize='fit-content' m='auto' my='1' mt='-10'>
+                        <Box
+                          fontSize={{ base: "15px" }}
+                          _hover={{
+                            color: useColorModeValue(colors['red'], colors['orange']),
+                            textDecoration: 'none',
+                          }}>
+                          {< FontAwesomeIcon icon={faClock} size='10x' />}
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Heading size='xs' textTransform='uppercase'>
+                          Digital Clock
+                        </Heading>
+                        <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
+                          Using both Millis and interrupts to make a working digital clock using no delays.
+                        </Text>
+                      </Box>
+                      <CardBody>
+                        <Stack divider={<StackDivider />} spacing='4'>
+                          <Stack
+                            direction={{
+                              base: 'row',
+                              sm: 'row',
+                              md: 'row'
                             }}
+                            wrap='wrap'
+                            rowGap='2'
+                            spacing='2'
                           >
-                            <Box
-                              backgroundColor={colors['orange']}
-                              color={grayOrBlack}
-                              rounded='md'
-                              p='1'
-                            >
-                              {skill['name']}
-                            </Box>
-                            {skill['years'] && (
+                            {_.map(projectOneSkills, (skill, index) => (
                               <Box
-                                backgroundColor={greenOrDarkGreen}
-                                color={grayOrBlack}
-                                rounded='full'
-                                px='2'
-                                py='1'
-                                ml='1'
+                                opacity='50%'
+                                display='flex'
+                                _hover={{
+                                  boxShadow: 'inner',
+                                  rounded: 'md',
+                                  textDecoration: 'none',
+                                  opacity: '100%'
+                                }}
                               >
-                                +{skill['years']}
+                                <Box
+                                  backgroundColor={colors['orange']}
+                                  color={grayOrBlack}
+                                  rounded='md'
+                                  p='1'
+                                >
+                                  {skill['name']}
+                                </Box>
+                                {skill['years'] && (
+                                  <Box
+                                    backgroundColor={greenOrDarkGreen}
+                                    color={grayOrBlack}
+                                    rounded='full'
+                                    px='2'
+                                    py='1'
+                                    ml='1'
+                                  >
+                                    +{skill['years']}
+                                  </Box>
+                                )}
                               </Box>
-                            )}
-                          </Box>
-                        ))}
-                        {/* map goes here */}
-                      </Stack>
+                            ))}
+                            {/* map goes here */}
+                          </Stack>
+                        </Stack>
+                      </CardBody>
                     </Stack>
                   </CardBody>
-                </Stack>
-              </CardBody>
-            </Card>
-            {/* ----------------------------PROJECT II---------------------------- */}
-            <Card w={{ base: "sm", md: "sm", lg: 'sm' }}
-              p='1'
-              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
-              variant='unstyled'
-              _hover={{
-                border: '1px',
-                borderColor: useColorModeValue('gray.500', 'gray.500'),
-                boxShadow: 'dark-lg',
-                rounded: '0',
-                textDecoration: 'none',
-                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
-                opacity: '100%'
-              }}>
-              <CardHeader>
-                <Heading size='md'>Project II</Heading>
-              </CardHeader>
-              <CardBody>
-                <Stack divider={<StackDivider />} spacing='2'>
-                  <Box boxSize='fit-content' m='auto' my='1'>
-                    <Link href={projectTwo} target='_blank'>
-                      <Box
-                        _hover={{
-                          color: useColorModeValue(colors['red'], colors['orange']),
-                          textDecoration: 'none',
-                          fontWeight: 'bold',
-                        }}>
-                        {< FontAwesomeIcon icon={faLightbulb} size='10x' />}
-                      </Box>
-                    </Link>
-                  </Box>
-                  <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                      Summary
-                    </Heading>
-                    <Text pt='2' fontSize='sm'>
-                      NASA TSGC sponsored project to Investigate and demonstrate a prototype of Li-Fi technology.
-                    </Text>
-                  </Box>
+                </Link>
+              </Card>
+              {/* ----------------------------PROJECT II---------------------------- */}
+              <Card
+                minH={{ base: "sm", md: "sm", lg: '29rem' }}
+                w={{ base: "sm", md: "sm", lg: 'sm' }}
+                mx='1'
+                p='1'
+                bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+                variant='outline'
+                rounded='0'
+                _hover={{
+                  border: '1px',
+                  borderColor: useColorModeValue('gray.500', 'gray.500'),
+                  boxShadow: 'dark-lg',
+                  rounded: '0',
+                  textDecoration: 'none',
+                  bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                  opacity: '100%'
+                }}>
+                <Link href={projectTwo} target='_blank'
+                  _hover={{
+                    color: useColorModeValue(colors['red'], colors['orange']),
+                    textDecoration: 'none',
+
+                  }}>
+                  <CardHeader color={useColorModeValue('gray.700', 'gray.300')}>
+                    <Heading size='md'>Project II</Heading>
+                  </CardHeader>
                   <CardBody>
-                    <Stack divider={<StackDivider />} spacing='4'>
-                      <Stack
-                        direction={{
-                          base: 'row',
-                          sm: 'row',
-                          md: 'row'
-                        }}
-                        wrap='wrap'
-                        rowGap='2'
-                        spacing='2'
-                      >
-                        {_.map(projectTwoSkills, (skill, index) => (
-                          <Box
-                            opacity='50%'
-                            display='flex'
-                            _hover={{
-                              boxShadow: 'inner',
-                              rounded: 'md',
-                              textDecoration: 'none',
-                              opacity: '100%'
+                    <Stack divider={<StackDivider />} spacing='2'>
+                      <Box boxSize='fit-content' m='auto' my='1' mt='-10'>
+                        <Box
+                          fontSize={{ base: "15px" }}
+                          _hover={{
+                            color: useColorModeValue(colors['red'], colors['orange']),
+                            textDecoration: 'none',
+                            fontWeight: 'bold',
+                          }}>
+                          {< FontAwesomeIcon icon={faLightbulb} size='10x' />}
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Heading size='xs' textTransform='uppercase'>
+                          Li-Fi System
+                        </Heading>
+                        <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
+                          NASA TSGC sponsored project to Investigate and demonstrate a prototype of Li-Fi technology.
+                        </Text>
+                      </Box>
+                      <CardBody>
+                        <Stack divider={<StackDivider />} spacing='4'>
+                          <Stack
+                            direction={{
+                              base: 'row',
+                              sm: 'row',
+                              md: 'row'
                             }}
+                            wrap='wrap'
+                            rowGap='2'
+                            spacing='2'
                           >
-                            <Box
-                              backgroundColor={colors['orange']}
-                              color={grayOrBlack}
-                              rounded='md'
-                              p='1'
-                            >
-                              {skill['name']}
-                            </Box>
-                            {skill['years'] && (
+                            {_.map(projectTwoSkills, (skill, index) => (
                               <Box
-                                backgroundColor={greenOrDarkGreen}
-                                color={grayOrBlack}
-                                rounded='full'
-                                px='2'
-                                py='1'
-                                ml='1'
+                                opacity='50%'
+                                display='flex'
+                                _hover={{
+                                  boxShadow: 'inner',
+                                  rounded: 'md',
+                                  textDecoration: 'none',
+                                  opacity: '100%'
+                                }}
                               >
-                                +{skill['years']}
+                                <Box
+                                  backgroundColor={colors['orange']}
+                                  color={grayOrBlack}
+                                  rounded='md'
+                                  p='1'
+                                >
+                                  {skill['name']}
+                                </Box>
+                                {skill['years'] && (
+                                  <Box
+                                    backgroundColor={greenOrDarkGreen}
+                                    color={grayOrBlack}
+                                    rounded='full'
+                                    px='2'
+                                    py='1'
+                                    ml='1'
+                                  >
+                                    +{skill['years']}
+                                  </Box>
+                                )}
                               </Box>
-                            )}
-                          </Box>
-                        ))}
-                        {/* map goes here */}
-                      </Stack>
+                            ))}
+                            {/* map goes here */}
+                          </Stack>
+                        </Stack>
+                      </CardBody>
                     </Stack>
                   </CardBody>
-                </Stack>
-              </CardBody>
-            </Card>
-            {/* ----------------------------PROJECT III---------------------------- */}
-            <Card w={{ base: "sm", md: "sm", lg: 'sm' }}
-              p='1'
-              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
-              variant='unstyled'
-              _hover={{
-                border: '1px',
-                borderColor: useColorModeValue('gray.500', 'gray.500'),
-                boxShadow: 'dark-lg',
-                rounded: '0',
-                textDecoration: 'none',
-                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
-                opacity: '100%'
-              }}>
-              <CardHeader>
-                <Heading size='md'>Project III</Heading>
-              </CardHeader>
-              <CardBody>
-                <Stack divider={<StackDivider />} spacing='2'>
-                  <Box boxSize='fit-content' m='auto' my='1'>
-                    <Link href={projectThree} target='_blank'>
-                      <Box
-                        _hover={{
-                          color: useColorModeValue(colors['red'], colors['orange']),
-                          textDecoration: 'none',
-                          fontWeight: 'bold',
-                        }}>
-                        {< FontAwesomeIcon icon={faAddressCard} size='10x' />}
-                      </Box>
-                    </Link>
-                  </Box>
-                  <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                      Summary
-                    </Heading>
-                    <Text pt='2' fontSize='sm'>
-                      Portfolio page made using React and Chakra UI.
-                    </Text>
-                  </Box>
+                </Link>
+              </Card>
+              {/* ----------------------------PROJECT III---------------------------- */}
+              <Card
+                minH={{ base: "sm", md: "sm", lg: '29rem' }}
+                w={{ base: "sm", md: "sm", lg: 'sm' }}
+                mx='1'
+                p='1'
+                bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+                variant='outline'
+                rounded='0'
+                _hover={{
+                  border: '1px',
+                  borderColor: useColorModeValue('gray.500', 'gray.500'),
+                  boxShadow: 'dark-lg',
+                  rounded: '0',
+                  textDecoration: 'none',
+                  bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                  opacity: '100%'
+                }}>
+                <Link href={projectThree} target='_blank'
+                  _hover={{
+                    color: useColorModeValue(colors['red'], colors['orange']),
+                    textDecoration: 'none',
+
+                  }} >
+                  <CardHeader color={useColorModeValue('gray.700', 'gray.300')}>
+                    <Heading size='md'>Project III</Heading>
+                  </CardHeader>
                   <CardBody>
-                    <Stack divider={<StackDivider />} spacing='4'>
-                      <Stack
-                        direction={{
-                          base: 'row',
-                          sm: 'row',
-                          md: 'row'
-                        }}
-                        wrap='wrap'
-                        rowGap='2'
-                        spacing='2'
-                      >
-                        {_.map(projectThreeSkills, (skill, index) => (
-                          <Box
-                            opacity='50%'
-                            display='flex'
-                            _hover={{
-                              boxShadow: 'inner',
-                              rounded: 'md',
-                              textDecoration: 'none',
-                              opacity: '100%'
+                    <Stack divider={<StackDivider />} spacing='2'>
+                      <Box boxSize='fit-content' m='auto' my='1' mt='-10'>
+                        <Box
+                          fontSize={{ base: "15px" }}
+                          _hover={{
+                            color: useColorModeValue(colors['red'], colors['orange']),
+                            textDecoration: 'none',
+                            fontWeight: 'bold',
+                          }}>
+                          {< FontAwesomeIcon icon={faAddressCard} size='10x' />}
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Heading size='xs' textTransform='uppercase'>
+                          Portfolio - Chakra UI
+                        </Heading>
+                        <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
+                          Portfolio page made using React and Chakra UI.
+                        </Text>
+                      </Box>
+                      <CardBody>
+                        <Stack divider={<StackDivider />} spacing='4'>
+                          <Stack
+                            direction={{
+                              base: 'row',
+                              sm: 'row',
+                              md: 'row'
                             }}
+                            wrap='wrap'
+                            rowGap='2'
+                            spacing='2'
                           >
-                            <Box
-                              backgroundColor={colors['orange']}
-                              color={grayOrBlack}
-                              rounded='md'
-                              p='1'
-                            >
-                              {skill['name']}
-                            </Box>
-                            {skill['years'] && (
+                            {_.map(projectThreeSkills, (skill, index) => (
                               <Box
-                                backgroundColor={greenOrDarkGreen}
-                                color={grayOrBlack}
-                                rounded='full'
-                                px='2'
-                                py='1'
-                                ml='1'
+                                opacity='50%'
+                                display='flex'
+                                _hover={{
+                                  boxShadow: 'inner',
+                                  rounded: 'md',
+                                  textDecoration: 'none',
+                                  opacity: '100%'
+                                }}
                               >
-                                +{skill['years']}
+                                <Box
+                                  backgroundColor={colors['orange']}
+                                  color={grayOrBlack}
+                                  rounded='md'
+                                  p='1'
+                                >
+                                  {skill['name']}
+                                </Box>
+                                {skill['years'] && (
+                                  <Box
+                                    backgroundColor={greenOrDarkGreen}
+                                    color={grayOrBlack}
+                                    rounded='full'
+                                    px='2'
+                                    py='1'
+                                    ml='1'
+                                  >
+                                    +{skill['years']}
+                                  </Box>
+                                )}
                               </Box>
-                            )}
-                          </Box>
-                        ))}
-                        {/* map goes here */}
-                      </Stack>
+                            ))}
+                            {/* map goes here */}
+                          </Stack>
+                        </Stack>
+                      </CardBody>
                     </Stack>
                   </CardBody>
-                </Stack>
-              </CardBody>
-            </Card>
-            {/* ----------------------------PROJECT IV---------------------------- */}
-            <Card w={{ base: "sm", md: "sm", lg: 'sm' }}
-              p='1'
-              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
-              variant='unstyled'
-              _hover={{
-                border: '1px',
-                borderColor: useColorModeValue('gray.500', 'gray.500'),
-                boxShadow: 'dark-lg',
-                rounded: '0',
-                textDecoration: 'none',
-                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
-                opacity: '100%'
-              }}>
-              <CardHeader>
-                <Heading size='md'>Project IV</Heading>
-              </CardHeader>
-              <CardBody>
-                <Stack divider={<StackDivider />} spacing='2'>
-                  <Box boxSize='fit-content' m='auto' my='1'>
-                    <Link href={projectFour} target='_blank'>
-                      <Box
-                        _hover={{
-                          color: useColorModeValue(colors['red'], colors['orange']),
-                          textDecoration: 'none',
-                          fontWeight: 'bold',
-                        }}>
-                        {< FontAwesomeIcon icon={faMapLocationDot} size='10x' />}
-                      </Box>
-                    </Link>
-                  </Box>
-                  <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                      Summary
-                    </Heading>
-                    <Text pt='2' fontSize='sm'>
-                      Census data map of Texas built using ©mapbox and Next.js.
-                    </Text>
-                  </Box>
+                </Link>
+              </Card>
+              {/* ----------------------------PROJECT IV---------------------------- */}
+              <Card
+                minH={{ base: "sm", md: "sm", lg: '29rem' }}
+                w={{ base: "sm", md: "sm", lg: 'sm' }}
+                mx='1'
+                p='1'
+                bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+                variant='outline'
+                rounded='0'
+                _hover={{
+                  border: '1px',
+                  borderColor: useColorModeValue('gray.500', 'gray.500'),
+                  boxShadow: 'dark-lg',
+                  rounded: '0',
+                  textDecoration: 'none',
+                  bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                  opacity: '100%'
+                }}>
+                <Link href={projectFour} target='_blank'
+                  _hover={{
+                    color: useColorModeValue(colors['red'], colors['orange']),
+                    textDecoration: 'none',
+
+                  }} >
+                  <CardHeader color={useColorModeValue('gray.700', 'gray.300')}>
+                    <Heading size='md'>Project IV</Heading>
+                  </CardHeader>
                   <CardBody>
-                    <Stack divider={<StackDivider />} spacing='4'>
-                      <Stack
-                        direction={{
-                          base: 'row',
-                          sm: 'row',
-                          md: 'row'
-                        }}
-                        wrap='wrap'
-                        rowGap='2'
-                        spacing='2'
-                      >
-                        {_.map(projectFourSkills, (skill, index) => (
-                          <Box
-                            opacity='50%'
-                            display='flex'
-                            _hover={{
-                              boxShadow: 'inner',
-                              rounded: 'md',
-                              textDecoration: 'none',
-                              opacity: '100%'
+                    <Stack divider={<StackDivider />} spacing='2'>
+                      <Box boxSize='fit-content' m='auto' my='1' mt='-10'>
+                        <Box
+                          fontSize={{ base: "15px" }}
+                          _hover={{
+                            color: useColorModeValue(colors['red'], colors['orange']),
+                            textDecoration: 'none',
+                            fontWeight: 'bold',
+                          }}>
+                          {< FontAwesomeIcon icon={faMapLocationDot} size='10x' />}
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Heading size='xs' textTransform='uppercase'>
+                          Texas - Census Data Map
+                        </Heading>
+                        <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
+                          Census data map of Texas built using ©mapbox and Next.js.
+                        </Text>
+                      </Box>
+                      <CardBody>
+                        <Stack divider={<StackDivider />} spacing='4'>
+                          <Stack
+                            direction={{
+                              base: 'row',
+                              sm: 'row',
+                              md: 'row'
                             }}
+                            wrap='wrap'
+                            rowGap='2'
+                            spacing='2'
                           >
-                            <Box
-                              backgroundColor={colors['orange']}
-                              color={grayOrBlack}
-                              rounded='md'
-                              p='1'
-                            >
-                              {skill['name']}
-                            </Box>
-                            {skill['years'] && (
+                            {_.map(projectFourSkills, (skill, index) => (
                               <Box
-                                backgroundColor={greenOrDarkGreen}
-                                color={grayOrBlack}
-                                rounded='full'
-                                px='2'
-                                py='1'
-                                ml='1'
+                                opacity='50%'
+                                display='flex'
+                                _hover={{
+                                  boxShadow: 'inner',
+                                  rounded: 'md',
+                                  textDecoration: 'none',
+                                  opacity: '100%'
+                                }}
                               >
-                                +{skill['years']}
+                                <Box
+                                  backgroundColor={colors['orange']}
+                                  color={grayOrBlack}
+                                  rounded='md'
+                                  p='1'
+                                >
+                                  {skill['name']}
+                                </Box>
+                                {skill['years'] && (
+                                  <Box
+                                    backgroundColor={greenOrDarkGreen}
+                                    color={grayOrBlack}
+                                    rounded='full'
+                                    px='2'
+                                    py='1'
+                                    ml='1'
+                                  >
+                                    +{skill['years']}
+                                  </Box>
+                                )}
                               </Box>
-                            )}
-                          </Box>
-                        ))}
-                        {/* map goes here */}
-                      </Stack>
+                            ))}
+                            {/* map goes here */}
+                          </Stack>
+                        </Stack>
+                      </CardBody>
                     </Stack>
                   </CardBody>
-                </Stack>
-              </CardBody>
-            </Card>
-          </HStack>
+                </Link>
+              </Card>
+            </HStack>
+          </Card>
         </Flex>
       </Box >
       {/* ----------------------------Footer---------------------------- */}
@@ -1123,11 +1179,12 @@ function App() {
         bottom={0} >
         <Link href={resume} target='_blank'>
           <Button
-            ml='3'
+            ml={{ base: "40px", md: "70px", lg: "3" }}
             color={useColorModeValue(colors['blackGH'], colors['white'])}
-            fontSize={{ base: '15px', md: '20px', lg: '30px' }}
+            fontSize={{ base: '12px', md: '20px', lg: '30px' }}
             height='48px'
-            width={{ base: '95px', md: '120px', lg: '180px' }}
+            width={{ base: '60px', md: '120px', lg: '180px' }}
+            flexFlow={{ base: "wrap", md: "nowrap", lg: "nowrap" }}
             leftIcon={<FontAwesomeIcon icon={faAddressCard} />}
             _hover={{
               rounded: 'sm',
