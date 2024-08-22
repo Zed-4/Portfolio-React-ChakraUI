@@ -98,7 +98,7 @@ const projectThreeSkills = [
 ]
 
 const projectFourSkills = [
-  { name: "TypeScript", years: 7 },
+  { name: "TypeScript" },
   { name: 'JavaScript' },
 ]
 
