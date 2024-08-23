@@ -811,7 +811,7 @@ function App() {
                       </Box>
                       <Box>
                         <Heading size='xs' textTransform='uppercase'>
-                          Li-Fi System
+                          Digital Clock
                         </Heading>
                         <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
                           Using both Millis and interrupts to make a working digital clock using no delays.
