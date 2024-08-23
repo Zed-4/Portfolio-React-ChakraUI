@@ -492,7 +492,7 @@ function App() {
                       opacity: '100%'
                     }}>
                     <Heading size='sm' textTransform='uppercase'>
-                      I: University of Texas at Arlington
+                      University of Texas at Arlington
                     </Heading>
                     <Text pt='2' fontSize='xs'>
                       Arlington, TX
