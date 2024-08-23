@@ -71,14 +71,21 @@ const colors = {
 const skills = [
   { name: "C/C++", years: 7 },
   { name: 'Arduino', years: 3 },
-  { name: 'Embedded Systems', years: 2 },
   { name: 'Python', years: 5 },
   { name: 'MATLAB' },
+  { name: 'Embedded Systems', years: 2 },
   { name: 'JavaScript' },
   { name: 'TypeScript' },
   { name: 'HTML' },
   { name: 'Linux/Windows OS.' },
 ]
+
+// const skillsProject = [
+//   { projectLink: 'https://github.com/Zed-4/Arduino', projectNum: "Project I", projectIcon: 'faClock', projectTitle: 'Digital Clock', projectSummary: 'Using both Millis and interrupts to make a working digital clock using no delays.' },
+//   { projectLink: 'https://github.com/Zed-4/Li-Fi_System', projectNum: "Project II", projectIcon: 'faLightbulb', projectTitle: 'Li-Fi System', projectSummary: 'NASA TSGC sponsored project to Investigate and demonstrate a prototype of Li-Fi technology.' },
+//   { projectLink: 'https://github.com/Zed-4/Portfolio', projectNum: "Project III", projectIcon: 'faAddressCard', projectTitle: 'Portfolio - Chakra UI', projectSummary: 'Portfolio page made using React and Chakra UI.' },
+//   { projectLink: 'https://github.com/Zed-4/Texas-Census-Data', projectNum: "Project IV", projectIcon: 'faMapLocationDot', projectTitle: 'Texas - Census Data Map', projectSummary: 'Census data map of Texas built using ©mapbox and Next.js.' },
+// ]
 
 const projectOneSkills = [
   { name: "C/C++", years: 7 },
@@ -120,7 +127,10 @@ function App() {
 
   const [isMoreOpen, setMoreOpen] = useControllableState({ defaultValue: false });
   const grayOrBlack = useColorModeValue(colors['bgGrayLight'], colors['bgBlack']);
+  // const lightGrayOrDarkGray = useColorModeValue(colors['gray.700'], colors['gray.300']);
   const greenOrDarkGreen = useColorModeValue(colors['greenDark'], colors['green']);
+  const redOrOrange = useColorModeValue(colors['red'], colors['orange']);
+  const bar_BlackOrOrange = useColorModeValue(colors['whiteBar'], colors['blackBar']);
 
   return (
 
@@ -746,23 +756,24 @@ function App() {
           <Card
             m='2'
             p='1'
-            color={useColorModeValue(colors['red'], colors['orange'])}
-            bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+            color={redOrOrange}
+            bg={grayOrBlack}
             _hover={{
               boxShadow: 'dark-lg',
               textDecoration: 'none',
-              bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+              bg: { bar_BlackOrOrange },
               opacity: '100%'
             }}>
             <CardHeader>
               <Heading size='lg'>Projects</Heading>
             </CardHeader>
-            <HStack flexFlow='wrap' maxH={{ base: "500", md: "300", lg: 'fit-content' }} justifyContent='center' overflowY='auto' spacing='5px' m='1'>
+            <HStack flexDir='row' maxH='500px' maxW={{ base: "500px", lg: '1285px' /*lg: 1000px*/ }} overflowX='auto' overflowY='hidden' pb='2'>
               {/* ----------------------------PROJECT I---------------------------- */}
-              <Card
-                minH={{ base: "sm", md: "sm", lg: '29rem' }}
-                w={{ base: "sm", md: "sm", lg: 'sm' }}
-                m='2'
+              <Card flexShrink='0'
+                minH={{ base: "406px", md: "370px", lg: '29rem' }}
+                maxH={{ base: "406px", md: "sm", lg: '29rem' }}
+                w={{ base: "300px", md: "sm", lg: 'sm' }}
+                mx='1'
                 p='1'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
                 variant='outline'
@@ -781,7 +792,7 @@ function App() {
                     color: useColorModeValue(colors['red'], colors['orange']),
                     textDecoration: 'none',
 
-                  }} >
+                  }}>
                   <CardHeader color={useColorModeValue('gray.700', 'gray.300')}>
                     <Heading size='md'>Project I</Heading>
                   </CardHeader>
@@ -793,13 +804,14 @@ function App() {
                           _hover={{
                             color: useColorModeValue(colors['red'], colors['orange']),
                             textDecoration: 'none',
+                            fontWeight: 'bold',
                           }}>
                           {< FontAwesomeIcon icon={faClock} size='10x' />}
                         </Box>
                       </Box>
                       <Box>
                         <Heading size='xs' textTransform='uppercase'>
-                          Digital Clock
+                          Li-Fi System
                         </Heading>
                         <Text pt='2' fontSize='sm' color={useColorModeValue('gray.700', 'gray.300')}>
                           Using both Millis and interrupts to make a working digital clock using no delays.
@@ -807,7 +819,7 @@ function App() {
                       </Box>
                       <CardBody>
                         <Stack divider={<StackDivider />} spacing='4'>
-                          <Stack
+                          <Stack m={{ base: "-5", md: "-5", lg: '0' }}
                             direction={{
                               base: 'row',
                               sm: 'row',
@@ -859,9 +871,10 @@ function App() {
                 </Link>
               </Card>
               {/* ----------------------------PROJECT II---------------------------- */}
-              <Card
-                minH={{ base: "sm", md: "sm", lg: '29rem' }}
-                w={{ base: "sm", md: "sm", lg: 'sm' }}
+              <Card flexShrink='0'
+                minH={{ base: "406px", md: "370px", lg: '29rem' }}
+                maxH={{ base: "406px", md: "sm", lg: '29rem' }}
+                w={{ base: "300px", md: "sm", lg: 'sm' }}
                 mx='1'
                 p='1'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -908,7 +921,7 @@ function App() {
                       </Box>
                       <CardBody>
                         <Stack divider={<StackDivider />} spacing='4'>
-                          <Stack
+                          <Stack m={{ base: "-5", md: "-5", lg: '0' }}
                             direction={{
                               base: 'row',
                               sm: 'row',
@@ -960,9 +973,10 @@ function App() {
                 </Link>
               </Card>
               {/* ----------------------------PROJECT III---------------------------- */}
-              <Card
-                minH={{ base: "sm", md: "sm", lg: '29rem' }}
-                w={{ base: "sm", md: "sm", lg: 'sm' }}
+              <Card flexShrink='0'
+                minH={{ base: "406px", md: "370px", lg: '29rem' }}
+                maxH={{ base: "406px", md: "sm", lg: '29rem' }}
+                w={{ base: "300px", md: "sm", lg: 'sm' }}
                 mx='1'
                 p='1'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -1009,7 +1023,7 @@ function App() {
                       </Box>
                       <CardBody>
                         <Stack divider={<StackDivider />} spacing='4'>
-                          <Stack
+                          <Stack m={{ base: "-5", md: "-5", lg: '0' }}
                             direction={{
                               base: 'row',
                               sm: 'row',
@@ -1061,9 +1075,10 @@ function App() {
                 </Link>
               </Card>
               {/* ----------------------------PROJECT IV---------------------------- */}
-              <Card
-                minH={{ base: "sm", md: "sm", lg: '29rem' }}
-                w={{ base: "sm", md: "sm", lg: 'sm' }}
+              <Card flexShrink='0'
+                minH={{ base: "406px", md: "370px", lg: '29rem' }}
+                maxH={{ base: "406px", md: "sm", lg: '29rem' }}
+                w={{ base: "300px", md: "sm", lg: 'sm' }}
                 mx='1'
                 p='1'
                 bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
@@ -1110,7 +1125,7 @@ function App() {
                       </Box>
                       <CardBody>
                         <Stack divider={<StackDivider />} spacing='4'>
-                          <Stack
+                          <Stack m={{ base: "-5", md: "-5", lg: '0' }}
                             direction={{
                               base: 'row',
                               sm: 'row',
@@ -1166,7 +1181,7 @@ function App() {
         </Flex>
       </Box >
       {/* ----------------------------Footer---------------------------- */}
-      <Flex overflow='auto'
+      < Flex overflow='auto'
         bg={useColorModeValue(colors['whiteBar'], colors['blackBar'])}
         boxShadow='dark-lg' borderColor={useColorModeValue('gray.500', 'gray.500')}
         width={{ lg: '100vw' }
