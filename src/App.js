@@ -4,7 +4,7 @@ import './App.css'
 import _, { } from 'lodash'
 
 import avatarUrl from './assets/me.jpg'
-import resume from './assets/resume/Abtin_Ortgoli.pdf'
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faMapLocationDot, faClock, faLightbulb, faAddressCard } from '@fortawesome/free-solid-svg-icons'
@@ -1192,7 +1192,7 @@ function App() {
         position={{ lg: "fixed" }}
         right={0}
         bottom={0} >
-        <Link href={resume} target='_blank'>
+        <Link href="Abtin_Ortgoli.pdf" target='_blank'>
           <Button
             ml={{ base: "40px", md: "70px", lg: "3" }}
             color={useColorModeValue(colors['blackGH'], colors['white'])}
