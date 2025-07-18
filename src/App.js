@@ -479,20 +479,9 @@ function App() {
                   Experience
                 </Heading>
               </CardHeader>
+              <Divider borderColor={colors['orange']} my='4' />
               <CardBody>
                 <Stack divider={<StackDivider />} spacing='4'>
-                  <Card
-              p='2'
-              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
-              variant='unstyled'
-              _hover={{
-                boxShadow: 'dark-lg',
-                textDecoration: 'none',
-                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
-                opacity: '100%'
-              }}>
-                <Stack divider={<StackDivider />} spacing='4'>
-                  <CardBody>
                   <Box
                     p='1'
                     opacity='50%'
@@ -542,6 +531,7 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
+            <Divider borderColor={colors['orange']} my='4' />
             <CardBody>
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
