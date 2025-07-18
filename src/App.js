@@ -310,6 +310,7 @@ function App() {
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
+              opacity='50%'
               _hover={{
                 boxShadow: 'dark-lg',
                 textDecoration: 'none',
@@ -328,7 +329,6 @@ function App() {
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
                     p='1'
-                    opacity='50%'
                     _hover={{
                       boxShadow: 'inner',
                       rounded: 'md',
@@ -342,6 +342,14 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Denton, TX
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Degree
                     </Heading>
@@ -376,6 +384,14 @@ function App() {
                         GPA: 3.23
                       </Highlight>
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Accomplishments
                     </Heading>
@@ -447,6 +463,7 @@ function App() {
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
+              opacity='50%'
               _hover={{
                 boxShadow: 'dark-lg',
                 textDecoration: 'none',
@@ -465,7 +482,6 @@ function App() {
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
                     p='1'
-                    opacity='50%'
                     _hover={{
                       boxShadow: 'inner',
                       rounded: 'md',
@@ -479,6 +495,14 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       West Mifflin, PA
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -508,6 +532,7 @@ function App() {
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
+              opacity='50%'
               _hover={{
                 boxShadow: 'dark-lg',
                 textDecoration: 'none',
@@ -518,7 +543,6 @@ function App() {
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
                     p='1'
-                    opacity='50%'
                     _hover={{
                       boxShadow: 'inner',
                       rounded: 'md',
@@ -532,6 +556,14 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Arlington, TX
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -552,6 +584,14 @@ function App() {
                         08-2024 TO 10-2024
                       </Highlight>
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Tasks
                     </Heading>
@@ -588,6 +628,7 @@ function App() {
               p='2'
               bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
               variant='unstyled'
+              opacity='50%'
               _hover={{
                 boxShadow: 'dark-lg',
                 textDecoration: 'none',
@@ -598,7 +639,6 @@ function App() {
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
                     p='1'
-                    opacity='50%'
                     _hover={{
                       boxShadow: 'inner',
                       rounded: 'md',
@@ -612,6 +652,14 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Denton, TX
                     </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -633,6 +681,13 @@ function App() {
                       </Highlight>
                     </Text>
                   </Box>
+                  <Box
+                    p='1'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Tasks
                     </Heading>
