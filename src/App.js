@@ -492,6 +492,7 @@ function App() {
                 opacity: '100%'
               }}>
                 <Stack divider={<StackDivider />} spacing='4'>
+                  <CardBody>
                   <Box
                     p='1'
                     opacity='50%'
@@ -541,7 +542,9 @@ function App() {
                 </Stack>
               </CardBody>
             </Card>
-            <Divider borderColor={colors['orange']} my='4' /><Box
+            <CardBody>
+                <Stack divider={<StackDivider />} spacing='4'>
+                  <Box
                     p='1'
                     opacity='50%'
                     _hover={{
