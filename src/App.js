@@ -481,7 +481,76 @@ function App() {
               </CardHeader>
               <CardBody>
                 <Stack divider={<StackDivider />} spacing='4'>
+                  <Card
+              p='2'
+              bg={useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])}
+              variant='unstyled'
+              _hover={{
+                boxShadow: 'dark-lg',
+                textDecoration: 'none',
+                bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
+                opacity: '100%'
+              }}>
+              <CardHeader >
+                <Heading
+                  pb='5'
+                  size='lg'
+                  color={useColorModeValue(colors['red'], colors['orange'])}>
+                  Experience
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Stack divider={<StackDivider />} spacing='4'>
                   <Box
+                    p='1'
+                    opacity='50%'
+                    _hover={{
+                      boxShadow: 'inner',
+                      rounded: 'md',
+                      // bg: useColorModeValue(colors['bgWhite'], colors['orangeDark']),
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
+                    <Heading size='sm' textTransform='uppercase'>
+                      Naval Nuclear Laboratory (FMP)
+                    </Heading>
+                    <Text pt='2' fontSize='xs'>
+                      West Mifflin, PA
+                    </Text>
+                  </Box>
+                  <Box
+                    p='1'
+                    opacity='50%'
+                    _hover={{
+                      boxShadow: 'inner',
+                      textDecoration: 'none',
+                      opacity: '100%'
+                    }}>
+                    <Heading size='sm' textTransform='uppercase'>
+                      Title
+                    </Heading>
+                    <Text pt='2' fontSize='md'>
+                      Computer & Electrical Engineer
+                    </Text>
+                    <Text pt='2' fontSize='sm'>
+                      <Highlight
+                        query={['PRESENT', 'emphasize', 'Accentuate']}
+                        styles={{
+                          px: '2',
+                          py: '1',
+                          rounded: 'full',
+                          bg: colors['orange'],
+                          color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
+                        }}
+                      >
+                        10-2024 TO PRESENT
+                      </Highlight>
+                    </Text>
+                  </Box>
+                </Stack>
+              </CardBody>
+            </Card>
+            <Divider borderColor={colors['orange']} my='4' /><Box
                     p='1'
                     opacity='50%'
                     _hover={{
