@@ -342,15 +342,6 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Denton, TX
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Degree
                     </Heading>
@@ -385,15 +376,6 @@ function App() {
                         GPA: 3.23
                       </Highlight>
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Accomplishments
                     </Heading>
@@ -497,15 +479,6 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       West Mifflin, PA
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -559,15 +532,6 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Arlington, TX
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -588,15 +552,6 @@ function App() {
                         08-2024 TO 10-2024
                       </Highlight>
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Tasks
                     </Heading>
@@ -657,15 +612,6 @@ function App() {
                     <Text pt='2' fontSize='xs'>
                       Denton, TX
                     </Text>
-                  </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading size='sm' textTransform='uppercase'>
                       Title
                     </Heading>
@@ -687,14 +633,6 @@ function App() {
                       </Highlight>
                     </Text>
                   </Box>
-                  <Box
-                    p='1'
-                    opacity='50%'
-                    _hover={{
-                      boxShadow: 'inner',
-                      textDecoration: 'none',
-                      opacity: '100%'
-                    }}>
                     <Heading pb='2' size='sm' textTransform='uppercase'>
                       Tasks
                     </Heading>
