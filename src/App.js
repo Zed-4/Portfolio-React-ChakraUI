@@ -491,15 +491,6 @@ function App() {
                 bg: useColorModeValue(colors['whiteBar'], colors['blackBar']),
                 opacity: '100%'
               }}>
-              <CardHeader >
-                <Heading
-                  pb='5'
-                  size='lg'
-                  color={useColorModeValue(colors['red'], colors['orange'])}>
-                  Experience
-                </Heading>
-              </CardHeader>
-              <CardBody>
                 <Stack divider={<StackDivider />} spacing='4'>
                   <Box
                     p='1'
@@ -592,7 +583,7 @@ function App() {
                           color: useColorModeValue(colors['bgGrayLight'], colors['bgBlack'])
                         }}
                       >
-                        08-2024 TO PRESENT
+                        08-2024 TO 10-2024
                       </Highlight>
                     </Text>
                   </Box>
